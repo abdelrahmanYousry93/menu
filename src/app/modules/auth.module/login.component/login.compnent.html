@@ -1,0 +1,123 @@
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="assets/images/logo.png" id="icon" alt="User Icon" />
+      <h1>MiEducation</h1>
+    </div>
+   <form>
+      <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="UserName" placeholder="username">
+      <input type="password" id="password" class="fadeIn third" name="login" [(ngModel)]="Password" placeholder="password">
+      <input type="button" (click)="onSubmit()" class="fadeIn fourth" value="Log In">
+    </form>
+   <div id="formFooter">
+   </div>
+ </div>
+</div>
+ -->
+ <div id="divLoginHeader">
+   <div>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12 col-md-12 pad-cancel-RL">
+                  <div class="navbar-header col-md-8">
+                      <img src="assets/images/miEducation.png" alt="logo" />
+                  </div>
+          </div>
+      </div>
+    </div>
+  
+      <div class="row partner-logo">
+          <div class="col-md-12">
+
+              <img src="assets/images/partner-logo.png" alt="site logo" />
+
+          </div>
+      </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container login-container">
+  <div class="bs-docs-section">
+      <div class="row maintable">
+          <div class="col-md-12">
+              <div class="bs-component divLoadView">
+
+                  <form method="post">
+                      <div class="container-fluid">
+                          <div class="row">
+                   
+                              
+                              <div class="logondatatable form-horizontal">
+                                  <div id="divLogin" class="divLogin">
+                                    <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" class="carousel slide"  [containerStyle]="{'max-width': '900px'}" [numVisible]="5"
+                                    [circular]="true"   [autoPlay]="true" [showItemNavigators]="true" [showThumbnails]="false" [showIndicators]="true" [showItemNavigatorsOnHover]="true"
+                                    [showIndicatorsOnItem]="true"> 
+                                    <ng-template pTemplate="item" let-item>
+                                        <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+                                    </ng-template>
+                                    <ng-template pTemplate="thumbnail" let-item>
+                                        <div class="p-grid p-nogutter p-justify-center">
+                                            <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                                        </div>
+                                    </ng-template>
+                                </p-galleria>
+
+
+                                <div class="modal-content">
+                                  <div id="alert-area"></div>
+                                  <div class="modal-header">
+                                      <h2 class="d-block w-100 text-center">Login</h2>
+                                  </div>
+                                  <div class="p-3">
+                                      <div class="form-group row"></div>
+                                      <div class="form-group row">
+                                         
+                                          <label class="col-sm-3 col-form-label lblTitle">User Name:</label>
+                                          <div class="col-sm-9">
+                                              <input type="text" id="username" name="username"  (keyup.enter)="onSubmit()"  class="UserName form-control" [(ngModel)]="UserName" placeholder="User Name" required="required" autofocus="autofocus" />
+                                          </div>
+                                      </div>
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label lblTitle">Password:</label>
+                                          <div class="col-sm-9">
+                                              <input type="password" id="password" name="password" (keyup.enter)="onSubmit()"  class="UserPassword form-control"  [(ngModel)]="Password" placeholder="Password" required="required" />
+                                          </div>
+                                      </div>
+                                  </div>
+
+                            
+                                  <div class="form-group row p-3">
+                                      <div class="col-form-label lblTitle"></div>
+                                      <div class="col-sm-12">
+                                          <button type="button" (click)="onSubmit()"  class="btn btn-default btn-lg btn-block btnLogin text-uppercase">Login</button>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                                  
+                                  </div>
+                              </div>
+                              <div id="globalMessageTest" class="globalmessage">
+                                  <img src="https://millensys.com/images/applications/message/global-message.gif?" alt="" onerror="this.onerror=null;this.src='../Content/images/applications/messages/global-message.png';" />
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<p-toast position="bottom-center" key="bc"></p-toast>
