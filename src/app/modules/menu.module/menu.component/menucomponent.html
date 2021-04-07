@@ -10,7 +10,7 @@
           <div class="owl-carousel owl-theme">
               <div class="item" *ngFor="let cat of resturant.categories">
                   <div class="item-content active">
-                      <a href="#">
+                      <a>
                           <img class="img-fluid" src="{{cat.categoryImage}}"  (error)="cat.categoryImage = 'assets/images/category.jpg'" >
                           <h4>{{cat.arName}}</h4>
                       </a>

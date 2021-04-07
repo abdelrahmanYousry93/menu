@@ -29,34 +29,14 @@ export class MyMenuComponent implements OnInit {
     
     
       });
-       /*  setInterval(() => {
-            $('.owl-carousel').owlCarousel({
-                loop:true,
-                margin:10,
-                nav:true,
-                dots:false,
-                  navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-                responsive:{
-                    0:{
-                        items:3
-                    },
-                    600:{
-                        items:3
-                    },
-                    1000:{
-                        items:4
-                    }
-                }
-            })
-            
-          }, 500); */
+      
 
      }
 
      OnLoad() 
      {
          if(!this.resid)
-   return;
+            return;
            this._apiService.get(Global.Base_Service_URL+"MyMenu/GetResturantInfo?Id="+this.resid).subscribe(
                data => {
               this.ngxService.stop();
@@ -65,24 +45,31 @@ export class MyMenuComponent implements OnInit {
                        if (data.status=="200") {
                      this.resturant=data.data;
                      console.log(this.resturant)
-                     $('.owl-carousel').owlCarousel({
-                        loop:true,
-                        margin:10,
-                        nav:true,
-                        dots:false,
-                          navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-                        responsive:{
-                            0:{
-                                items:3
-                            },
-                            600:{
-                                items:3
-                            },
-                            1000:{
-                                items:4
+
+
+
+                     setInterval(() => {
+                        $('.owl-carousel').owlCarousel({
+                            loop:true,
+                            margin:10,
+                            nav:true,
+                            dots:false,
+                              navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+                            responsive:{
+                                0:{
+                                    items:3
+                                },
+                                600:{
+                                    items:3
+                                },
+                                1000:{
+                                    items:4
+                                }
                             }
-                        }
-                    })
+                        })
+                        
+                      }, 500);
+                
                        }
                        else {                
                        }
