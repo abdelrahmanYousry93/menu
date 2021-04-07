@@ -4,8 +4,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.h4, h4 {
+  font-size: 1.2rem;
+}
+
 button:focus {
   outline: unset !important;
+}
+
+.container {
+  padding: 0px;
 }
 
 .owl-theme .owl-nav [class*=owl-]:hover {
@@ -13,6 +21,10 @@ button:focus {
   color: #000;
   text-decoration: none;
   outline: unset !important;
+}
+
+span {
+  display: inline-block;
 }
 
 .header-container {
@@ -28,9 +40,21 @@ button:focus {
   width: 100px;
 }
 
+.menu-container {
+  border-top: 2px solid #f4d7ca;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+.menu-container h3 {
+  text-transform: capitalize;
+}
+
 .slider-container .owl-carousel .item-content {
   text-align: center;
   text-transform: capitalize;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 10px;
 }
 .slider-container .owl-carousel .item-content a {
   color: #212529;
@@ -39,12 +63,17 @@ button:focus {
   text-decoration: none;
 }
 .slider-container .owl-carousel .item-content img {
-  border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+.slider-container .owl-carousel .item-content.active {
+  background: #fff;
+}
+.slider-container .owl-carousel .item-content.active h4 {
+  color: #f44336;
 }
 .slider-container .owl-carousel .owl-nav {
   position: absolute;
-  top: calc(50% - 50px);
+  top: calc(50% - 8px);
   left: 0;
   z-index: 9999;
   width: 100%;
@@ -67,10 +96,10 @@ button:focus {
   color: #fff;
 }
 .slider-container .owl-carousel .owl-nav button.owl-prev {
-  left: 0px;
+  left: -15px;
 }
 .slider-container .owl-carousel .owl-nav button.owl-next {
-  right: 0px;
+  right: -15px;
 }
 
 .all-items {
@@ -79,6 +108,7 @@ button:focus {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding: 15px;
 }
 .all-items .one-item {
   display: flex;
@@ -105,6 +135,10 @@ button:focus {
     width: 100%;
   }
 }
+.slider-container {
+  padding: 0 15px;
+}
+
 .view-one-item {
   position: relative;
   text-align: center;
@@ -112,11 +146,14 @@ button:focus {
   max-width: 800px;
   margin: auto;
 }
+.view-one-item h4 {
+  font-weight: bold;
+}
 .view-one-item .fa-chevron-left {
   position: absolute;
   top: 0;
   left: 0;
-  background: #afafaf;
+  background: RGBA(0, 0, 0, 0.7);
   color: #fff;
   width: 30px;
   height: 30px;
@@ -124,6 +161,7 @@ button:focus {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin: 10px;
 }
 .view-one-item img {
   margin-bottom: 10px;
@@ -146,6 +184,32 @@ button:focus {
   width: 10px;
   height: 10px;
   border-radius: 20px;
+}
+
+body {
+  direction: rtl;
+}
+
+.owl-carousel.owl-theme.owl-loaded.owl-drag {
+  direction: ltr;
+}
+
+.all-items .one-item .item-details {
+  text-align: right;
+}
+
+.view-one-item .sizes ul {
+  padding: 0;
+  text-align: right;
+}
+
+.view-one-item .sizes ul li {
+  padding-right: 30px;
+}
+
+.view-one-item .sizes ul li:after {
+  left: unset;
+  right: 10px;
 }
 
 /*# sourceMappingURL=my-style.css.map */

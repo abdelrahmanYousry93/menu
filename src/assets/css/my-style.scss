@@ -4,8 +4,16 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
+.h4, h4 {
+    font-size: 1.2rem;
+}
+
 button:focus{
     outline: unset !important;
+}
+
+.container {
+	padding: 0px;
 }
 
 .owl-theme .owl-nav [class*=owl-]:hover {
@@ -13,6 +21,10 @@ button:focus{
     color: #000;
     text-decoration: none;
     outline: unset !important;
+}
+
+span {
+    display: inline-block;
 }
 
 .header-container{
@@ -31,11 +43,25 @@ button:focus{
 }
 
 
+.menu-container {
+    border-top: 2px solid #f4d7ca;
+    margin-top: 20px;
+    padding-top: 10px;
+	h3 {
+		text-transform: capitalize;
+	}
+}
+
+
 .slider-container{
 	.owl-carousel{
 		.item-content{
 			text-align: center;
 			text-transform: capitalize;
+			border-radius: 10px;
+			overflow: hidden;
+			padding-bottom: 10px;
+
 			a{
 				color : #212529;
 				&:hover{
@@ -43,13 +69,20 @@ button:focus{
 				}
 			}
 			img{
-				border-radius: 10px;
-				margin-bottom: 10px;
+				margin-bottom: 15px;
 			}
 		}
+
+		.item-content.active {
+			background: #fff;
+			h4 {
+				color: #f44336;
+			}
+		}
+
 		.owl-nav {
 		    position: absolute;
-		    top: calc(50% - 50px);
+		    top: calc(50% - 8px);
 		    left: 0;
 		    z-index: 9999;
 		    width: 100%;
@@ -72,10 +105,10 @@ button:focus{
 				}
 			}
 			button.owl-prev {
-			    left: 0px;
+			    left: -15px;
 			}
 			button.owl-next{
-			    right: 0px;				
+			    right: -15px;				
 			}
 		}
 	}
@@ -88,6 +121,7 @@ button:focus{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+	padding: 15px;
 
 	.one-item {
 		display: flex;
@@ -123,24 +157,34 @@ button:focus{
 	}
 }
 
+.slider-container {
+    padding: 0 15px;
+}
+
 .view-one-item{
     position: relative;
 	text-align: center;
 	text-transform: capitalize;
 	max-width: 800px;
 	margin: auto;
+
+	h4 {
+		font-weight: bold;
+	}
+	
 	.fa-chevron-left {
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    background: #afafaf;
-	    color: #fff;
-	    width: 30px;
-	    height: 30px;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	    cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: RGBA(0 , 0 , 0 , 0.7);
+		color: #fff;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		margin: 10px;
 	}
 	img {
 		margin-bottom: 10px;
@@ -164,4 +208,43 @@ button:focus{
 	    	}
 	    }
 	}
+}
+
+
+
+
+
+
+
+
+
+//  RTL CODE
+
+body {
+    direction: rtl;
+}
+
+.owl-carousel.owl-theme.owl-loaded.owl-drag {
+    direction: ltr;
+}
+
+.all-items .one-item .item-details {
+    text-align: right;
+}
+
+
+.view-one-item .sizes ul {
+    padding: 0;
+    text-align: right;
+}
+
+.view-one-item .sizes ul li{
+
+    padding-right: 30px;
+}
+
+
+.view-one-item .sizes ul li:after {
+    left: unset;
+    right: 10px;
 }
