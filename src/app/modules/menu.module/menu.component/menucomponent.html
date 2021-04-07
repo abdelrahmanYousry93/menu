@@ -2,41 +2,17 @@
     <div class="container">
         <div class="header-container">
             <div class="logo">
-                <img class="img-fluid" src="assets/images/logo.png">
-                <h4> Autum & winter Menu </h4>
+                <img class="img-fluid" src="{{resturant.logo}}" (error)="resturant.logo = 'assets/images/logo.png'" >
+                <h4> {{resturant.arName}}</h4>
             </div><!-- logo -->
         </div> <!-- header-container -->
         <div class="slider-container"> 
           <div class="owl-carousel owl-theme">
-              <div class="item">
+              <div class="item" *ngFor="let cat of resturant.categories">
                   <div class="item-content">
                       <a href="#">
-                          <img class="img-fluid" src="assets/images/category.jpg">
-                          <h4> hot drinks </h4>
-                      </a>
-                  </div> <!-- item-content -->
-              </div> <!-- item -->
-              <div class="item">
-                  <div class="item-content">
-                      <a href="#">
-                          <img class="img-fluid" src="assets/images/category.jpg">
-                          <h4> hot drinks </h4>
-                      </a>
-                  </div> <!-- item-content -->
-              </div> <!-- item -->
-              <div class="item">
-                  <div class="item-content">
-                      <a href="#">
-                          <img class="img-fluid" src="assets/images/category.jpg">
-                          <h4> hot drinks </h4>
-                      </a>
-                  </div> <!-- item-content -->
-              </div> <!-- item -->
-              <div class="item">
-                  <div class="item-content">
-                      <a href="#">
-                          <img class="img-fluid" src="assets/images/category.jpg">
-                          <h4> hot drinks </h4>
+                          <img class="img-fluid" src="{{cat.categoryImage}}"  (error)="cat.categoryImage = 'assets/images/category.jpg'" >
+                          <h4>{{cat.arName}}</h4>
                       </a>
                   </div> <!-- item-content -->
               </div> <!-- item -->
@@ -44,60 +20,16 @@
         </div> <!-- slider-container -->
         <div class="menu-container">
             <div class="all-items"> 
-              <div class="one-item" [routerLink]="['/item']">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
+              <div class="one-item" *ngFor="let it of items">
+                  <div class="item-image"  [routerLink]="['/item']">
+                      <img class="img-fluid" src="{{it.itemImage}}"  (error)="it.itemImage = 'assets/images/item.jpg'" >
                   </div> <!-- item-image -->
                   <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                      <h4> {{it.arName}}</h4>
+                      <p> <span class="price">  {{it.price}} </span> <span class="currency">EGP</span> </p>
                   </div> <!-- item-details -->
               </div> <!-- one-item --> 
-              <div class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
+        
             </div> <!-- all-items -->
         </div> <!-- menu-container -->
     </div> <!-- container -->

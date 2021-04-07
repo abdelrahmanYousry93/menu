@@ -22,7 +22,13 @@ export class MenuService {
     catchError(this.handleErrorObservable);
   }
 
-
+  get(url): Observable<any> {
+    return this.http.get(url) .pipe(map((response:Response) => {
+      return  <any>response
+      // return  <any>response.json()
+    }));
+    catchError(this.handleErrorObservable);
+  }
   
   async postAsync(url,obj) {
     return await this.http.post(url,obj) .pipe(map((response:Response) => {
